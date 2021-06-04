@@ -4,7 +4,7 @@ import themeOne from "./colorsThemes";
 import projects from '../info/githubPrj';
 import Small from './small'
 
-const { pink, lightBlue, white } = themeOne
+const { pink, white } = themeOne
 
 const AboutContainer = styled.section`
   display: flex;
@@ -12,7 +12,7 @@ const AboutContainer = styled.section`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 150vh;
+  min-height: 180vh;
   justify-content: center;
   color: ${white};
   max-width: 1000px;
@@ -32,6 +32,11 @@ const AboutContainer = styled.section`
     margin: 0;
     margin-top: 20px;
     gap: 20px;
+
+    @media screen and (max-width: 800px) {
+      grid-template-columns: 2fr 2fr;
+      height: 220vh;
+    }
   }
 
   h3 {
