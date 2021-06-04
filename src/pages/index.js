@@ -1,6 +1,6 @@
 import React from "react"
 import { Styles } from '../styles/styles';
-import { Navbar ,Landing, About, Projects, Solo, Contact } from '../components/index';
+import { Navbar ,Landing, About, Projects, Solo, Contact, Footer } from '../components/index';
 
 const Home = () => (
   <>
@@ -10,7 +10,8 @@ const Home = () => (
     <About />
     <Projects />
     <Solo />
-    {/* <Contact /> */}
+    <Contact />
+    <Footer />
   </>
 );
 
