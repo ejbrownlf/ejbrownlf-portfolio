@@ -3,10 +3,11 @@ import styled from "styled-components"
 import themeOne from "./colorsThemes"
 import laughs from "../assets/Laughs-Eats-Screenshot.png"
 import posts from "../assets/postsnstuff.png"
-import mentorme from "../assets/landingpage.png";
-import useWindowDimensions from "../hooks/windowSize";
+import mentorme from "../assets/landingpage.png"
+import useWindowDimensions from "../hooks/windowSize"
+import { FaGithub } from "react-icons/fa"
 
-const { pink, white, darkBlue } = themeOne
+const { pink, white, darkBlue, lightBlue } = themeOne
 
 const ProjectContainer = styled.section`
   display: flex;
@@ -53,6 +54,7 @@ const ProjectContainer = styled.section`
   a {
     margin: auto;
     margin-left: 10px;
+    color: ${lightBlue};
   }
 `
 
@@ -69,10 +71,10 @@ const ProjectDesc = styled.section`
   p {
     background-color: ${darkBlue};
   }
-`;
+`
 
 const Projects = () => {
-  const {width} = useWindowDimensions();
+  const { width } = useWindowDimensions()
 
   return (
     <ProjectContainer id="projects">
@@ -89,11 +91,24 @@ const Projects = () => {
             matched with mentors who best represent their needs as a mentee. The
             application allows users to make friends, join chat rooms, and make
             posts to help out others.
-            <p style={{ padding: "0" }}>;la ndf;a</p>
+            <p style={{ padding: "0", color: "#919191", fontSize: "0.9rem" }}>
+              {"["} Node.js, React, Sass, MongoDB, Algorithms, MaterialUI,
+              Styled Compnonents, Multer, Passport, Socket.io {"]"}
+            </p>
+            <a
+                  href="https://github.com/freejonm/mentor.me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub
+                    size={28}
+                    style={{ marginRight: "10px", marginLeft: "10px" }}
+                  />
+                </a>
           </p>
         </ProjectDesc>
         <a
-          href="https://github.com/freejonm/mentor.me"
+          href="https://mentorme3000.herokuapp.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -101,47 +116,77 @@ const Projects = () => {
         </a>
       </div>
       <div className="groupPGrid">
-        { width > 800 ? <>
-        <a
-          href="https://github.com/JFunck1990/Posts-n-Stuff"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledImg src={posts} />
-        </a>
+        {width > 800 ? (
+          <>
+            <a
+              href='https://postnstuff.herokuapp.com/'
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StyledImg src={posts} />
+            </a>
 
-        <ProjectDesc>
-          <p>
-            Posts N' Stuff is a simple social media platform where users can
-            share recipes for their favorite adult drinks or their favorite at
-            home meal recipes. Users can also post about their at home DIY
-            projects with the steps it took to complete them.
-            <p style={{ padding: "0" }}>;la ndf;a</p>
-          </p>
-        </ProjectDesc>
-        </> : <>
-        <ProjectDesc>
-          <p>
-            Posts N' Stuff is a simple social media platform where users can
-            share recipes for their favorite adult drinks or their favorite at
-            home meal recipes. Users can also post about their at home DIY
-            projects with the steps it took to complete them.
-            <p style={{ padding: "0" }}>;la ndf;a</p>
-          </p>
-        </ProjectDesc>
+            <ProjectDesc>
+              <p>
+                Posts N' Stuff is a simple social media platform where users can
+                share recipes for their favorite adult drinks or their favorite
+                at home meal recipes. Users can also post about their at home
+                DIY projects with the steps it took to complete them.
+                <p
+                  style={{ padding: "0", color: "#919191", fontSize: "0.9rem" }}
+                >
+                  {"["} Node.js, React, HandleBars, Passport, Socket.io, MySQL{" "}
+                  {"]"}
+                </p>
+                <a
+                  href="https://github.com/JFunck1990/Posts-n-Stuff"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub
+                    size={28}
+                    style={{ marginRight: "10px", marginLeft: "10px" }}
+                  />
+                </a>
+              </p>
+            </ProjectDesc>
+          </>
+        ) : (
+          <>
+            <ProjectDesc>
+              <p>
+                Posts N' Stuff is a simple social media platform where users can
+                share recipes for their favorite adult drinks or their favorite
+                at home meal recipes. Users can also post about their at home
+                DIY projects with the steps it took to complete them.
+                <p
+                  style={{ padding: "0", color: "#919191", fontSize: "0.9rem" }}
+                >
+                  {"["} Node.js, React, Sass, MongoDB, Algorithms, MaterialUI,
+                  Styled Compnonents, Multer, Passport, Socket.io {"]"}
+                </p>
+                <a
+                  href="https://github.com/JFunck1990/Posts-n-Stuff"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub
+                    size={28}
+                    style={{ marginRight: "10px", marginLeft: "10px" }}
+                  />
+                </a>
+              </p>
+            </ProjectDesc>
 
-        <a
-          href="https://github.com/JFunck1990/Posts-n-Stuff"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <StyledImg src={posts} />
-        </a>
-        </>
-
-        
-        
-      }
+            <a
+              href='https://postnstuff.herokuapp.com/'
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <StyledImg src={posts} />
+            </a>
+          </>
+        )}
       </div>
       <div className="groupPGrid">
         <ProjectDesc>
@@ -153,12 +198,24 @@ const Projects = () => {
             criteria for food in your area. The app will then give you a list of
             jokes you can tell your date/meeting and suggests several
             restaurants in your area.
-            <p style={{ padding: "0" }}>;la ndf;a</p>
+            <p style={{ padding: "0" }}>
+              {"["} HTML, CSS, JavaScript, ZomatoApi, LocalStorage {"]"}
+            </p>
+            <a
+                  href="https://github.com/kcrammer/Laughs-and-Eats"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub
+                    size={28}
+                    style={{ marginRight: "10px", marginLeft: "10px" }}
+                  />
+                </a>
           </p>
         </ProjectDesc>
 
         <a
-          href="https://github.com/kcrammer/Laughs-and-Eats"
+          href="https://kcrammer.github.io/Laughs-and-Eats/"
           target="_blank"
           rel="noopener noreferrer"
         >
