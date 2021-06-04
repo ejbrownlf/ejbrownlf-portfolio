@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import React from "react"
 import themeOne from "./colorsThemes"
+import Resume from "../assets/Erik J Brown's Resume.pdf"
+import useWindowDimensions from "../hooks/windowSize"
 
 const { pink, lightBlue, purple, greenGrey, white, darkBlue } = themeOne
 
@@ -15,8 +17,12 @@ const Nav = styled.ul`
   justify-content: flex-end;
   border-bottom: 1px solid;
   border-color: ${pink};
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   padding-left: 0px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 0.9rem;
+  }
 `
 
 const Navitem = styled.li`
@@ -34,43 +40,84 @@ const NavItemLeft = styled.li`
   margin-right: auto;
 `
 
-const Navbar = () => (
-  <Nav>
-    <NavItemLeft>
-      EJB
-    </NavItemLeft>
-    <Navitem>Const PageLinks = {"{"} </Navitem>
-    <Navitem style={{ paddingLeft: "0px"}}>
-      0:{" "}
-      <a style={{ color: lightBlue }} href="/#about">
-        {" "}
-        'About'
-      </a>
-      ,{" "}
-    </Navitem>
-    <Navitem>
-      1:{" "}
-      <a style={{ color: lightBlue }} href="/#projects">
-        'Projects'
-      </a>
-      ,{" "}
-    </Navitem>
-    <Navitem>
-      2:{" "}
-      <a style={{ color: lightBlue }} href="/#contact">
-        {" "}
-        'Contact'
-      </a>
-      ,{" "}
-    </Navitem>
-    <Navitem>
-      3:{" "}
-      <a style={{ color: lightBlue }} href="/#resume">
-        'Resume'
-      </a>{" "}
-      {"}"}
-    </Navitem>
-  </Nav>
-)
+const Navbar = () => {
+  const { width } = useWindowDimensions()
+
+  return (
+    <Nav>
+      <NavItemLeft>EJB</NavItemLeft>
+      {width > 800 ? (
+        <>
+          <Navitem>Const PageLinks = {"{"} </Navitem>
+          <Navitem style={{ paddingLeft: "0px" }}>
+            0:{" "}
+            <a style={{ color: lightBlue }} href="/#about">
+              {" "}
+              'About'
+            </a>
+            ,{" "}
+          </Navitem>
+          <Navitem>
+            1:{" "}
+            <a style={{ color: lightBlue }} href="/#projects">
+              'Projects'
+            </a>
+            ,{" "}
+          </Navitem>
+          <Navitem>
+            2:{" "}
+            <a style={{ color: lightBlue }} href="/#contact">
+              {" "}
+              'Contact'
+            </a>
+            ,{" "}
+          </Navitem>
+          <Navitem>
+            3:{" "}
+            <a
+              style={{ color: lightBlue }}
+              href={Resume}
+              target="_blank"
+              rel="noreferrer"
+            >
+              'Resume'
+            </a>{" "}
+            {"}"}
+          </Navitem>
+        </>
+      ) : (
+        <>
+          <Navitem style={{ paddingLeft: "0px" }}>
+            <a style={{ color: lightBlue }} href="/#about">
+              {" "}
+              'About'
+            </a>
+          </Navitem>
+          <Navitem>
+            <a style={{ color: lightBlue }} href="/#projects">
+              'Projects'
+            </a>
+          </Navitem>
+          <Navitem>
+            <a style={{ color: lightBlue }} href="/#contact">
+              {" "}
+              'Contact'
+            </a>
+          </Navitem>
+          <Navitem>
+            <a
+              style={{ color: lightBlue }}
+              href={Resume}
+              target="_blank"
+              rel="noreferrer"
+            >
+              'Resume'
+            </a>
+          </Navitem>
+        </>
+      )}
+    </Nav>
+  )
+}
 
 export default Navbar
