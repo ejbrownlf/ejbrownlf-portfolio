@@ -1,17 +1,32 @@
 import { useState, useEffect } from 'react';
 
 function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
+  const isBrowser = typeof window !== "undefined";
+
+  if (!isBrowser) {
+    return{
+      width: 0
+    };
+  };
+
+
+  const { innerWidth: width} = window;
   return {
-    width,
-    height
+    width
   };
 }
 
 export default function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const isBrowser = typeof window !== "undefined";
 
+  
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  
   useEffect(() => {
+    if (!isBrowser) {
+      return;
+    };
+
     function handleResize() {
       setWindowDimensions(getWindowDimensions());
     }
