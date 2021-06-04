@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import themeOne from "./colorsThemes"
+import themeOne from "./colorsThemes";
+import me from '../assets/unnamed.jpg'
 
 const { pink, lightBlue, white } = themeOne
 
@@ -20,6 +21,7 @@ const AboutContainer = styled.section`
     margin: 0px;
     margin-right: auto;
     padding: 0px;
+
   }
 
   .aboutGrid {
@@ -29,6 +31,11 @@ const AboutContainer = styled.section`
     width: 100%;
     margin: 0;
     gap: 50px;
+
+    @media screen and (max-width: 800px) {
+      display: block;
+      height: 150vh;
+    }
   }
 
   h3 {
@@ -37,14 +44,26 @@ const AboutContainer = styled.section`
   }
 
   p {
-    display: grid;
     font-size: 18px;
+  }
+
+  .container {
+    @media screen and (max-width: 800px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 `
 
 const StyledImg = styled.img`
   width: 100%;
   border-radius: 50%;
+  @media screen and (max-width: 800px) {
+      width: 80%;
+    }
+
 `
 
 const ListGrid = styled.section`
@@ -68,7 +87,6 @@ const ListGroup = styled.ul`
 const About = () => (
   <AboutContainer id="about">
     <div>
-      <h3> {"{ "}</h3>
       <h3 style={{ paddingLeft: "20px", color: pink }}>About-Me : </h3>
     </div>
     <div className="aboutGrid">
@@ -102,8 +120,9 @@ const About = () => (
           this bootcamp and on my own:
         </p>
       </div>
-      <div>
-        <StyledImg src="assets/unnamed.jpg"></StyledImg>
+      <div className="container">
+        <StyledImg src={me}></StyledImg>
+        <div>
         Tools:
         <ListGrid>
           <ListGroup>
@@ -130,6 +149,8 @@ const About = () => (
             <li>SQL</li>
           </ListGroup>
         </ListGrid>
+
+        </div>
       </div>
     </div>
   </AboutContainer>
