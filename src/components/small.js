@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import themeOne from "./colorsThemes"
-import { FaRegClone, FaGithub } from "react-icons/fa"
-import { Link, Router } from "react-router-dom"
+import { FaGithub } from "react-icons/fa"
 
 const { white, darkBlue, lightBlue } = themeOne
 
@@ -18,7 +17,7 @@ const Card = styled.section`
     font-size: 1rem;
     color: ${white};
   }
-  p {
+  d {
     font-size: 0.8rem;
     color: #919191;
   }
@@ -30,7 +29,7 @@ const ImageContainer = styled.ul`
   font-size: 1rem;
   list-style: none;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-family: "Inconsolata", monospace;
   padding-left: 0px;
   padding-bottom: 10px;
@@ -39,16 +38,18 @@ const ImageContainer = styled.ul`
 const Small = ({ project }) => (
   <Card>
     <ImageContainer>
-      <FaRegClone size={42} style={{ color: lightBlue, marginRight: "auto",  }} />
-      <a href={project.github}>
-        <FaGithub size={28} style={{color: lightBlue, paddingRight: '10px' }} />
+      <a href={project.github} target="_blank" rel="noopener noreferrer">
+        <FaGithub
+          size={28}
+          style={{ color: lightBlue, paddingRight: "10px" }}
+        />
       </a>
     </ImageContainer>
     <h1>{project.name}</h1>
     <h2>{project.desc}</h2>
-    <p>
-      {"[ "} {project.tools} {" ]"}{" "}
-    </p>
+    <d>
+      {"[ "} {project.tools} {" ]"}
+    </d>
   </Card>
 )
 
