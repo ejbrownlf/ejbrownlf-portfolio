@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import React from "react"
 import themeOne from "./colorsThemes"
-import Resume from "../assets/Erik J Brown's Resume.pdf"
-import useWindowDimensions from "../hooks/windowSize"
+import Resume from "../assets/Erik J Brown's Resume.pdf";
+import useWindowDimensions from "../hooks/windowSize";
+import { Link } from "react-scroll";
 
 const { pink, lightBlue, purple, greenGrey, white, darkBlue } = themeOne
 
@@ -19,6 +20,11 @@ const Nav = styled.ul`
   border-color: ${pink};
   font-family: "Inconsolata", monospace;
   padding-left: 0px;
+  position: sticky;
+  top:0;
+  z-index: 0;
+  background-color: ${purple};
+  opacity: 0.8;
 
   @media screen and (max-width: 800px) {
     font-size: 0.9rem;
@@ -29,6 +35,12 @@ const Navitem = styled.li`
   color: ${white};
   text-decoration: none;
   padding: 10px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 0.9rem;
+    padding: 2px;
+  }
+  
 `
 
 const NavItemLeft = styled.li`
@@ -51,25 +63,25 @@ const Navbar = () => {
           <Navitem>Const PageLinks = {"{"} </Navitem>
           <Navitem style={{ paddingLeft: "0px" }}>
             0:{" "}
-            <a style={{ color: lightBlue }} href="/#about">
+            <Link style={{ color: lightBlue }} to="about" smooth={true} offset={50} duration={500}>
               {" "}
               'About'
-            </a>
+            </Link>
             ,{" "}
           </Navitem>
           <Navitem>
             1:{" "}
-            <a style={{ color: lightBlue }} href="/#projects">
+            <Link style={{ color: lightBlue }} to="projects" smooth={true} offset={50} duration={500}>
               'Projects'
-            </a>
+            </Link>
             ,{" "}
           </Navitem>
           <Navitem>
             2:{" "}
-            <a style={{ color: lightBlue }} href="/#contact">
+            <Link style={{ color: lightBlue }} to="contact" smooth={true} offset={50} duration={500}>
               {" "}
               'Contact'
-            </a>
+            </Link>
             ,{" "}
           </Navitem>
           <Navitem>
@@ -88,21 +100,19 @@ const Navbar = () => {
       ) : (
         <>
           <Navitem style={{ paddingLeft: "0px" }}>
-            <a style={{ color: lightBlue }} href="/#about">
-              {" "}
-              'About'
-            </a>
+            <Link style={{ color: lightBlue }} to="about" smooth={true} offset={50} duration={500}>
+              About
+            </Link>
           </Navitem>
           <Navitem>
-            <a style={{ color: lightBlue }} href="/#projects">
-              'Projects'
-            </a>
+            <Link style={{ color: lightBlue }} to="projects" smooth={true} offset={50} duration={500}>
+              Projects
+            </Link>
           </Navitem>
           <Navitem>
-            <a style={{ color: lightBlue }} href="/#contact">
-              {" "}
-              'Contact'
-            </a>
+            <Link style={{ color: lightBlue }} to="contact" smooth={true} offset={50} duration={500}>
+              Contact
+            </Link>
           </Navitem>
           <Navitem>
             <a
@@ -111,7 +121,7 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer"
             >
-              'Resume'
+              Resume
             </a>
           </Navitem>
         </>

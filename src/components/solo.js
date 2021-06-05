@@ -8,11 +8,11 @@ const { pink, white } = themeOne
 
 const AboutContainer = styled.section`
   display: flex;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 180vh;
+  height: 180vh;
   justify-content: center;
   color: ${white};
   max-width: 1000px;
@@ -28,6 +28,7 @@ const AboutContainer = styled.section`
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     height: 140vh;
+    max-height: 1200px;
     width: 100%;
     margin: 0;
     margin-top: 20px;
@@ -35,7 +36,11 @@ const AboutContainer = styled.section`
 
     @media screen and (max-width: 800px) {
       grid-template-columns: 2fr 2fr;
-      height: 220vh;
+      height: 300vh;
+    }
+    @media screen and (max-width: 500px) {
+      display: block;
+      height: 300vh;
     }
   }
 
@@ -48,10 +53,17 @@ const AboutContainer = styled.section`
     display: grid;
     font-size: 18px;
   }
+
+  @media screen and (max-width: 800px) {
+    justify-content: flex-start;
+      min-height: 2600px;
+      height: 400vh;
+      max-height: 2700px;
+    }
 `;
 
 const Solo = () => (
-  <AboutContainer id="about">
+  <AboutContainer>
     <div>
       <h3 style={{ paddingLeft: "20px", color: pink, marginBottom: '10px;' }}>Small Projects: </h3>
     </div>

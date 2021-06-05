@@ -14,8 +14,10 @@ const ProjectContainer = styled.section`
   box-sizing: border-box;
   align-items: center;
   flex-direction: column;
+  min-height: 1300px;
   margin: 0 auto;
-  min-height: 130vh;
+  height: 120vh;
+  max-height: 1000px;
   justify-content: center;
   color: ${white};
   max-width: 1000px;
@@ -30,13 +32,17 @@ const ProjectContainer = styled.section`
   .groupPGrid {
     display: grid;
     grid-template-columns: 3fr 3fr;
+    min-height: 250px;
+    max-height: 300px;
     height: 39vh;
     width: 100%;
     margin: 0 0 20px 0;
 
     @media screen and (max-width: 800px) {
       display: block;
-      height: 75vh;
+      height: 100vh;
+      min-height: 500px;
+      max-height: 900px;
     }
   }
 
@@ -56,6 +62,11 @@ const ProjectContainer = styled.section`
     margin-left: 10px;
     color: ${lightBlue};
   }
+
+  @media screen and (max-width: 800px) {
+      min-height: 2000px;
+      /* height: 150vh;  */
+    }
 `
 
 const StyledImg = styled.img`

@@ -10,7 +10,7 @@ const AboutContainer = styled.section`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 75vh;
+  height: 75vh;
   justify-content: center;
   color: ${white};
   max-width: 1000px;
@@ -40,6 +40,11 @@ const AboutContainer = styled.section`
   a {
     color: ${lightBlue};
   }
+
+  @media screen and (max-width: 500px) {
+      height: 120vh;
+      max-height: 850px;
+    }
 `
 
 const Contact = () => (

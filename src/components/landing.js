@@ -12,7 +12,7 @@ const LandingContainer = styled.section`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 110vh;
   justify-content: center;
   color: ${white};
   max-width: 800px;
@@ -38,6 +38,10 @@ const LandingContainer = styled.section`
   a {
       color: ${white}
   }
+
+  @media screen and (max-width: 800px) {
+    min-height: 800px;
+    }
 `
 
 const Landing = () => (
@@ -57,7 +61,7 @@ const Landing = () => (
       <p>
         {" "}
         I am a developer from Huntsville, Al. I specialize in designing and
-        building websites from the ground up. I particular enjoy creating the
+        building websites from the ground up. I excel in creating the
         backend functionality for sites i.e. building things like algorithms,
         data structures, complex database queries, and building safeguards
         against cyber threats. Currently looking for a new oppurtunity in the

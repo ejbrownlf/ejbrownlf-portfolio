@@ -11,7 +11,9 @@ const AboutContainer = styled.section`
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 120vh;
+  /* min-height: 1300px; */
+  height: 120vh;
+  max-height: 1000px;
   justify-content: center;
   color: ${white};
   max-width: 1000px;
@@ -55,6 +57,11 @@ const AboutContainer = styled.section`
       margin-right: auto;
     }
   }
+
+  @media screen and (max-width: 800px) {
+      min-height: 1300px;
+      justify-content: flex-start;
+    }
 `
 
 const StyledImg = styled.img`
@@ -98,7 +105,7 @@ const About = () => (
           fair. I did very well with it and impressed my physics teacher. The
           next year my city started a pumpkin launching competition and my
           teacher suggested I put a team together and scale up my trebuchet
-          design for the competition. This competetion allowed me to meet
+          design for the competition. This competition allowed me to meet
           several people in the engineering industry and solidified my interest
           in engineering going into college.
         </p>

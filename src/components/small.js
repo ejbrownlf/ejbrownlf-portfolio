@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import themeOne from "./colorsThemes"
-import { FaGithub } from "react-icons/fa"
+import { FaGithub, FaClone, FaLink } from "react-icons/fa"
 
 const { white, darkBlue, lightBlue } = themeOne
 
@@ -21,6 +21,10 @@ const Card = styled.section`
     font-size: 0.8rem;
     color: #919191;
   }
+
+  @media screen and (max-width: 500px) {
+      margin: 10px;
+    }
 `
 
 const ImageContainer = styled.ul`
@@ -38,12 +42,20 @@ const ImageContainer = styled.ul`
 const Small = ({ project }) => (
   <Card>
     <ImageContainer>
+      {project.live ? <a href={project.live} target="_blank" rel="noopener noreferrer" > 
+        <FaLink
+          size={28}
+          style={{ color: lightBlue, paddingRight: "10px", marginRight: 'auto' }}
+        />
+      </a> : <></> }
+      
       <a href={project.github} target="_blank" rel="noopener noreferrer">
         <FaGithub
           size={28}
           style={{ color: lightBlue, paddingRight: "10px" }}
         />
       </a>
+      
     </ImageContainer>
     <h1>{project.name}</h1>
     <h2>{project.desc}</h2>
